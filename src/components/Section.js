@@ -16,7 +16,10 @@ function Section({title, description, backgroundImg, leftBtn, rightBtn}) {
             <div>
                 <BtnGroup>
                     <LeftBtn>{leftBtn}</LeftBtn>
-                    <RightBtn>{rightBtn}</RightBtn>
+
+                    {rightBtn && 
+                      <RightBtn>{rightBtn}</RightBtn>
+                    }
                 </BtnGroup>
 
                 <DownArrow src= '/images/down-arrow.svg'/>
@@ -29,11 +32,10 @@ function Section({title, description, backgroundImg, leftBtn, rightBtn}) {
 
 const Wrap = styled.div`
     width: 100vw;
-    height: 130vh;
+    height: 100vh;
     background-size: cover;
-    // background-image: url("/images/model-3.jpg");
-    // background-image: ${props => `url("${props.bgImage}")` }
-    background-image: ${props => `url("/images/${props.bgImage}")`}
+    // background: ${props => `url(${props.bgImage})`};
+    background-image: ${(props) => props.bgImage};
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
@@ -63,7 +65,7 @@ const BtnGroup = styled.div`
 const LeftBtn = styled.button`
 background-color: rgba(23, 26, 32, 0.8);
 color: white;
-height: 40px;
+height: 45px;
 width: 256px;
 display: flex;
 justify-content: center;
