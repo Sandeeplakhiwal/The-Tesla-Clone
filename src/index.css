@@ -9,7 +9,15 @@
 body{
     width: 100%;
     overflow-x: hidden;
+    height: 120vh;
 }
+
+a{
+  text-decoration: none;
+  display: flex;
+  cursor: pointer;
+}
+
 
 
 

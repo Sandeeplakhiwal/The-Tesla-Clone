@@ -3,27 +3,31 @@ import { $CombinedState } from '@reduxjs/toolkit'
 import React from 'react'
 
 import styled from 'styled-components'
+import Fade from 'react-reveal/Fade';
+
 
 function Section({title, description, backgroundImg, leftBtn, rightBtn}) {
   return (
     <div>
         <Wrap bgImage={backgroundImg}>
-            <ItemText>
-                <h1> {title} </h1>
-                <p> {description} </p>
-            </ItemText>
+            <Fade bottom>
+              <ItemText>
+                  <h1> {title} </h1>
+                  <p> {description} </p>
+              </ItemText>
+            </Fade>
+
 
             <div>
-                <BtnGroup>
-                    <LeftBtn>{leftBtn}</LeftBtn>
-
-                    {rightBtn && 
-                      <RightBtn>{rightBtn}</RightBtn>
-                    }
+              <Fade bottom>
+                <BtnGroup>                
+                      <LeftBtn>{leftBtn}</LeftBtn>
+                      {rightBtn && 
+                        <RightBtn>{rightBtn}</RightBtn>
+                      }                 
                 </BtnGroup>
-
-                <DownArrow src= '/images/down-arrow.svg'/>
-                
+              </Fade>
+              <DownArrow src= '/images/down-arrow.svg'/>                
             </div>
         </Wrap>
     </div>
@@ -31,6 +35,7 @@ function Section({title, description, backgroundImg, leftBtn, rightBtn}) {
 }
 
 const Wrap = styled.div`
+    // z-index: -1000;
     width: 100vw;
     height: 100vh;
     background-size: cover;

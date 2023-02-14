@@ -62,5 +62,6 @@ function Home() {
 export default Home
 
 const Container = styled.div`
-    height: 110vh;  
+    height: 110vh; 
+    // z-index: -100; 
 `
